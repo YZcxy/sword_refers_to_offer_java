@@ -16,10 +16,4 @@ public class No15 {
             res = head;
         }
     }
-
-    public class ListNode{
-        int val;
-        ListNode next;
-        ListNode(int val){this.val = val;}
-    }
 }

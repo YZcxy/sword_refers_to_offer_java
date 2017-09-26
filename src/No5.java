@@ -9,13 +9,4 @@ public class No5 {
         }
         return list;
     }
-
-    public class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
 }
