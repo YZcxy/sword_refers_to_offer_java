@@ -2,10 +2,14 @@ import java.util.ArrayList;
 
 //顺时针打印矩阵
 //调试没问题，但是牛客网上过不了，不知道为什么
+//上面的问题解决了，之前没有处理好长和宽为1的情况
 public class No20 {
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         ArrayList<Integer> list = new ArrayList<Integer>();
-        for(int i=0;i<(matrix.length+1)/2;i++){
+        int length = matrix.length;
+        int width = matrix[0].length;
+        int num = length < width?length:width;
+        for(int i=0;i<(num+1)/2;i++){
             printOneMatrix(matrix,i,i,list);
         }
         return list;
@@ -14,18 +18,27 @@ public class No20 {
     public void printOneMatrix(int [][] matrix,int x,int y,ArrayList<Integer> list){
         int width = matrix[0].length-(x*2);
         int height = matrix.length-(y*2);
-
-        for(int i=1;i<width;i++){
-            list.add(matrix[x][y++]);
-        }
-        for(int i=1;i<height;i++){
-            list.add(matrix[x++][y]);
-        }
-        for(int i=1;i<width;i++){
-            list.add(matrix[x][y--]);
-        }
-        for(int i=1;i<height;i++){
-            list.add(matrix[x--][y]);
+        if(height == 1){
+            for(int i=0;i<width;i++){
+                list.add(matrix[x][y++]);
+            }
+        }else if(width == 1){
+            for(int i=0;i<height;i++){
+                list.add(matrix[x++][y]);
+            }
+        }else {
+            for(int i=1;i<width;i++){
+                list.add(matrix[x][y++]);
+            }
+            for(int i=1;i<height;i++){
+                list.add(matrix[x++][y]);
+            }
+            for(int i=1;i<width;i++){
+                list.add(matrix[x][y--]);
+            }
+            for(int i=1;i<height;i++){
+                list.add(matrix[x--][y]);
+            }
         }
     }
 
