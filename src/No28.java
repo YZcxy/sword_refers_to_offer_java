@@ -20,6 +20,7 @@ public class No28 {
 
     public void doPermute(HashSet<String> set,char[] str,int begin){
         if(begin == str.length){
+            //这里画个重点，需要加入的是新建的字符串，而不是字符串本身。
             set.add(new String(str));
             return;
         }
