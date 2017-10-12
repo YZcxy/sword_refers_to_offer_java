@@ -27,6 +27,12 @@ public class DynamicProgramming {
         //No4.LIS测试用例
         int[] array2 = new int[]{5,6,7,1,2,8,7,2};
         System.out.println(dp.findLIS(array2));
+
+        //No5.背包测试用例
+        int[] c = new int[]{4,2,3,6,9,1};
+        int[] w = new int[]{7,1,5,5,12,1};
+        int capacity = 10;
+        System.out.println(dp.knapsack(c,w,capacity));
     }
 
     /**
@@ -163,27 +169,71 @@ public class DynamicProgramming {
      * 输入：一个数组。
      * 输出：最长递增子序列的长度。
      */
-    //有bug，明天再调
     public int findLIS(int[] array){
+        /**
+         * 分析：
+         * dp(i)：表示以数组第i位结尾的最长递增子序列。
+         * dp(i)={
+         *     1  当i=0；
+         *     max(1,dp(j)+1...)  (0<=j<i)当array[j]<array[i]
+         * }
+         */
         if(array.length==0)return 0;
-        findLISDP(array,array.length-1);
-        return max;
-    }
-    int max = 0;
-    public int findLISDP(int[] array,int n){
-        if(n==0) return 1;
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            if(array[i] < array[n]){
-                list.add(findLISDP(array,i));
-            }else {
-                list.add(1);
-            }
-
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int i=0;i<array.length;i++){
+            res.add(findLISDP(array,i,res));
         }
-        list.sort(null);
-        int temp = list.get(list.size()-1);
-        if(max<temp) max=temp;
-        return temp;
+        res.sort(null);
+        return res.get(res.size()-1);
+    }
+    public int findLISDP(int[] array,int i,ArrayList<Integer> res){
+        if(i==0) return 1;
+        //搜索缓存，存在则直接返回缓存
+        if(i<res.size()){
+            return res.get(i);
+        }else {
+            ArrayList<Integer> list = new ArrayList<>();
+            for(int j=0;j<i;j++){
+                if(array[j] < array[i]){
+                    list.add(findLISDP(array,j,res)+1);
+                }else {
+                    list.add(1);
+                }
+            }
+            list.sort(null);
+            return list.get(list.size()-1);
+        }
+    }
+
+    /**
+     * No.5背包问题
+     *
+     * 有N件物品和一个容量为V的背包。
+     * 第i件物品的大小是c[i]，价值是w[i]。
+     * 求解将哪些物品装入背包可使价值总和最大。
+     *
+     */
+    public int knapsack(int[] c,int[] w,int capacity){
+        /**
+         * 分析：
+         * dp[i][j]：表示前i个物品放入容量为j的背包的最大价值。
+         *
+         * dp[i][j]={
+         *     0  当i<0；
+         *     max(dp[i-1][j],dp[i-1][j-c[i]]+w[i]) 当j>=c[i]；容量够，有放入和不放入两种情况
+         *     dp[i-1][j] 当j<c[i]；容量不够，不放入
+         * }
+         */
+        if(c.length!=w.length)return 0;
+        if(capacity == 0) return 0;
+        return knapsackDP(c,w,c.length-1,capacity);
+    }
+    public int knapsackDP(int[] c,int[] w,int i,int j){
+        if(i<0) return 0;
+        if(j>=c[i]){
+            return max(knapsackDP(c,w,i-1,j),knapsackDP(c,w,i-1,j-c[i])+w[i]);
+        }else {
+            return knapsackDP(c,w,i-1,j);
+        }
     }
 }
