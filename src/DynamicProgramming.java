@@ -33,6 +33,11 @@ public class DynamicProgramming {
         int[] w = new int[]{7,1,5,5,12,1};
         int capacity = 10;
         System.out.println(dp.knapsack(c,w,capacity));
+
+        //No6.LCS测试用例
+        String a = "asdfg-qwe-zx";
+        String b = "Asdfg+qwe+zxc";
+        System.out.println(dp.findLCS(a,b));
     }
 
     /**
@@ -44,14 +49,17 @@ public class DynamicProgramming {
      *     8 4
      *    3 6 9
      *   7 2 9 5
-     * 例子中的最优方案是：5 + 8 + 6 + 9 = 28。
+     * 例子中的最优方案是：5 + 8 + 6 + 9 = 28
+     *
+     * 输入：符合塔树的二维数组。
+     * 输出：经过的最大值。
      */
     public int towerTree(int[][] array){
         /**
          * 分析：
          * dp(x,y)：表示第x层第y个数所经过的最大值。
          * dp(x,y)={
-         *      array[x][y]  当x=0;
+         *      array[x][y]  当x==0;
          *      dp[x-1,y] + array[x][y] 当x!=0,y=0;
          *      dp[x-1,y-1] + array[x][y] 当x!=0,y=x;
          *      max(dp[x-1,y-1],dp[x-1,y]) + array[x][y] 当x!=0;
@@ -90,9 +98,9 @@ public class DynamicProgramming {
      *
      * 依此乘法表,对任一定义于∑上的字符串,适当加括号表达式后得到一个表达式。
      * 例如,对于字符串x=bbbba,它的其中一个加括号表达式为i(b(bb))(ba)。
-     * 依乘法表,该表达式的值为a。试设计一个动态规划算法,对任一定义于∑上的字符串x=x1x2…xn，
-     * 计算有多少种不同的加括号方式,使由x导出的加括号表达式的值为a
-     * 要求：
+     * 依乘法表,该表达式的值为a。试设计一个动态规划算法,对任一定义于∑上的字符串x=x1x2…xn。
+     * 计算有多少种不同的加括号方式,使由x导出的加括号表达式的值为a。
+     *
      * 输入：输入一个以a,b,c组成的任意一个字符串。
      * 输出：计算出的加括号方式数。
      */
@@ -143,6 +151,9 @@ public class DynamicProgramming {
      *
      * 一只青蛙一次可以跳上1级台阶，也可以跳上2级。
      * 求该青蛙跳上一个n级的台阶总共有多少种跳法。
+     *
+     * 输入：台阶数n。
+     * 输出：跳法总数。
      */
     public int jumpFloor(int n){
         /**
@@ -150,8 +161,8 @@ public class DynamicProgramming {
          * dp(n)：表示跳第n阶台阶一共的跳法。
          * dp(n)={
          *     0    当n<=0;
-         *     1    当n=1;
-         *     2    当n=2;
+         *     1    当n==1;
+         *     2    当n==2;
          *     dp(n-1) + dp(n-2)  当n>2;
          * }
          */
@@ -164,8 +175,9 @@ public class DynamicProgramming {
      * No.4最长递增子序列(LIS)
      *
      * 给定一个长度为N的数组，找出一个最长的单调自增子序列（不一定连续，但是顺序不能乱）。
-     * 例如：给定一个长度为6的数组A{5， 6， 7， 1， 2， 8}，
+     * 例如：给定一个长度为6的数组A{5， 6， 7， 1， 2， 8}。
      * 则其最长的单调递增子序列为{5，6，7，8}，长度为4。
+     *
      * 输入：一个数组。
      * 输出：最长递增子序列的长度。
      */
@@ -174,7 +186,7 @@ public class DynamicProgramming {
          * 分析：
          * dp(i)：表示以数组第i位结尾的最长递增子序列。
          * dp(i)={
-         *     1  当i=0；
+         *     1  当i==0；
          *     max(1,dp(j)+1...)  (0<=j<i)当array[j]<array[i]
          * }
          */
@@ -212,6 +224,8 @@ public class DynamicProgramming {
      * 第i件物品的大小是c[i]，价值是w[i]。
      * 求解将哪些物品装入背包可使价值总和最大。
      *
+     * 输入：物品大小数组c,物品价值数组w,背包容量。
+     * 输出：最大的价值。
      */
     public int knapsack(int[] c,int[] w,int capacity){
         /**
@@ -234,6 +248,39 @@ public class DynamicProgramming {
             return max(knapsackDP(c,w,i-1,j),knapsackDP(c,w,i-1,j-c[i])+w[i]);
         }else {
             return knapsackDP(c,w,i-1,j);
+        }
+    }
+
+    /**
+     * No.6最长公共子序列(LCS)
+     *
+     * 给出两个字符串a, b，求它们的最长的公共子序列。
+     *
+     * 输入：字符串a和字符串b。
+     * 输出：最长的公共子序列的长度。
+     */
+    public int findLCS(String a,String b){
+        /**
+         * 分析：
+         * dp[i][j]：表示a字符串前i段和b字符串前j段的最长公共子序列。
+         * dp[i][j]={
+         *     0  当i<0||j<0
+         *     dp[i-1][j-1]+1  当a[i]==b[j]
+         *     max(dp[i][j-1],dp[i-1][j]) 当a[i]!=b[j]
+         * }
+         */
+        if(a.length()==0||b.length()==0)return 0;
+        char[] aChars = a.toCharArray();
+        char[] bChars = b.toCharArray();
+        return findLCSDP(aChars,bChars,aChars.length-1,bChars.length-1);
+
+    }
+    public int findLCSDP(char[] a,char[] b,int i,int j){
+        if(i<0||j<0)return 0;
+        if(a[i]==b[j]){
+            return findLCSDP(a,b,i-1,j-1)+1;
+        }else {
+            return max(findLCSDP(a,b,i,j-1),findLCSDP(a,b,i-1,j));
         }
     }
 }
