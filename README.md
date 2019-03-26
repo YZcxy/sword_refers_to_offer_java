@@ -5,4 +5,4 @@
 
 ---
 
-第三题：二维数组中的查找 >>> [[思路]()] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No3.java)]
+第三题：二维数组中的查找 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/1)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No3.java)]
