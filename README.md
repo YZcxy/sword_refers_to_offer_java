@@ -12,3 +12,5 @@
 第四题：替换空格 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/2)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No4.java)]     
 
 第五题：从尾到头打印链表 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/3)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No5.java)]     
+
+第六题：重建二叉树 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/4)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No6.java)]     
