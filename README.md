@@ -14,3 +14,5 @@
 第五题：从尾到头打印链表 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/3)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No5.java)]     
 
 第六题：重建二叉树 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/4)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No6.java)]     
+
+第七题：用两个栈实现队列 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/5)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No7.java)]     
