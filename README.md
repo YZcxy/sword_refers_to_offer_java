@@ -10,3 +10,5 @@
 第三题：二维数组中的查找 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/1)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No3.java)]     
 
 第四题：替换空格 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/2)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No4.java)]     
+
+第五题：从尾到头打印链表 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/3)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No5.java)]     
