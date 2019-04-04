@@ -34,3 +34,6 @@ n<=39
 
 第十题：二进制中1的个数 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/8)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No10.java)]     
 > 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+
+第十一题：数值的整数次方 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/9)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No11.java)]     
+> 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
