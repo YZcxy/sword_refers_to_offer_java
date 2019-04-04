@@ -29,3 +29,6 @@
 第九题：斐波那契数列 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/7)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No9.java)]     
 > 大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。
 n<=39
+
+第十题：二进制中1的个数 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/8)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No10.java)]     
+> 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
