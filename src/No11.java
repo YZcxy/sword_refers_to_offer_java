@@ -1,4 +1,7 @@
-//数值的整数次方
+/**
+* 【数值的整数次方】
+* 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
+*/
 public class No11 {
     public double Power(double base, int n) {
         double res = 1, curr = base;
