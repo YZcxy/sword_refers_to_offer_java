@@ -18,3 +18,5 @@
 第七题：用两个栈实现队列 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/5)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No7.java)]     
 
 第八题：旋转数组的最小数字 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/6)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No8.java)]     
+
+第九题：斐波那契数列 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/7)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No9.java)]     
