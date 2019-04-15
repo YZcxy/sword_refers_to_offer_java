@@ -37,3 +37,7 @@ n<=39
 
 第十一题：数值的整数次方 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/9)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No11.java)]     
 > 给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
+
+第十二题：打印1到最大的N位数 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/10)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No12.java)]     
+> 输入一个数字N，按顺序打印出从1到最大的N位十进制数。
+
