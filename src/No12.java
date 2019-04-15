@@ -1,5 +1,9 @@
-//打印1到最大的N位数
 import java.math.BigInteger;
+
+/**
+* 打印1到最大的N位数
+* 输入一个数字N，按顺序打印出从1到最大的N位十进制数。
+*/
 public class No12 {
     public static void PrintToMaxOfNDigits(int n){
         BigInteger number = BigInteger.valueOf(1);
