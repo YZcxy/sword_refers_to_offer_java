@@ -41,3 +41,6 @@ n<=39
 第十二题：打印1到最大的N位数 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/10)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No12.java)]     
 > 输入一个数字N，按顺序打印出从1到最大的N位十进制数。
 
+第十二题：在O(1)时间删除链表节点 >>> [[思路](https://github.com/YZcxy/sword_refers_to_offer_java/issues/11)] [[代码](https://github.com/YZcxy/sword_refers_to_offer_java/blob/master/src/No13.java)]     
+> 给定单向链表的头指针和一个结点指针，定义一个函数在O(1)时间删除该节点。
+
